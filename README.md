@@ -1,5 +1,5 @@
 # 💫 About Me:
-🔭 I'm currently learning AI/ML at SRM-AP<br>🫂 I'm looking to collaborate with people who would like to make something new and groundbreaking<br>🤔 I might be clumsy while coding<br>⚡I'm ready to learn new tech stacks if you can teach me<br>💀 I can't work on terminals for a long time
+🔭 I'm currently learning AI/ML at SRM-AP<br>🫂 Let's team up and create something truly groundbreaking <br>🤔 I might be clumsy while coding<br>⚡I'm ready to learn new tech stacks if you can teach me<br>💀 I can't work on terminals for a long time
 
 
 ## 🌐 Socials:
