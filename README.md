@@ -1,4 +1,4 @@
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=250&section=header&text=OJ%20ROCKET&fontSize=90&animation=fadeIn&fontAlignY=38&desc=Special%20Agent%20|%20AI%20Architect&descAlignY=51&descSize=20" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=250&section=header&text=OJ%20ROCKET&fontSize=90&animation=fadeIn&fontAlignY=40&desc=Special%20Agent%20|%20AI%20Architect&descAlignY=51&descSize=20" /></p>
 <p align="center">
   <img src="https://img.shields.io/badge/STATUS-CLASSIFIED-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/CLEARANCE-LEVEL_TOP_SECRET-black?style=for-the-badge" />
