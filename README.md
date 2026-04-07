@@ -1,4 +1,4 @@
-<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=250&section=header&text=OJ%20ROCKET&fontSize=90&animation=fadeIn&fontAlignY=40&desc=Special%20Agent%20|%20AI%20Architect&descAlignY=51&descSize=20" /></p>
+<p align="center"><img src="https://capsule-render.vercel.app/api?type=waving&color=FF0000&height=250&section=header&text=OJ%20ROCKET&fontSize=90&animation=fadeIn&fontAlignY=30&desc=Special%20Agent%20|%20AI%20Architect&descAlignY=51&descSize=20" /></p>
 <p align="center">
   <img src="https://img.shields.io/badge/STATUS-CLASSIFIED-red?style=for-the-badge" />
   <img src="https://img.shields.io/badge/CLEARANCE-LEVEL_TOP_SECRET-black?style=for-the-badge" />
@@ -12,8 +12,8 @@
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/aqua.png" width="100%" />
 </p>
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mshibanami/action-status-badge/master/assets/images/status-success.svg" alt="Status" />
-  <img src="https://img.shields.io/badge/Uptime-99.9%25-brightgreen" alt="Uptime" />
+  <img src="https://img.shields.io/badge/Status-INFILTRATING_SRM_AP-orange" alt="Uptime" />
+  <img src="https://img.shields.io/badge/Uptime-67.67%25-brightgreen" alt="Uptime" />
   <img src="https://img.shields.io/badge/Memory-Leaking-red" alt="Clumsy" />
 </p>
 
@@ -33,24 +33,22 @@ Intel: Known to be "clumsy" while coding, but the output is always mission-succe
 </p>
 
 ---
-
-### 🐍 Contribution Snake
+### 📡 STEALTH_RADAR (B-2_SPIRIT_UPLINK)
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=ojrocket&theme=tokyonight&area=true&hide_border=true" width="100%" />
+  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=900&size=22&pause=100&color=FF3131&center=true&vCenter=true&width=750&height=350&lines=%3E%3E+INITIATING+GHOST_PROTOCOL...;%5B+%E2%97%89+%5D+SCANNING+SRM-AP+COORDINATES...;%3E%3E+B-2+SPIRIT+STEALTH+WING+SYNCED;%3E%3E+RADAR+SIGNATURE:+INVISIBLE;++++++++++++++.______.++++++++;+++++++++++++_/++\__/++\_+++++++;+++++++++++_/++++++++++++\_+++++;++++++++++/________________\++++;%3E%3E+AVIONICS_STATUS:+STABLE;%3E%3E+OPERATION:+GHOST_CODE_X" />
 </p>
-
 
 ---
 
 ### 📊 GitHub Stats
-![](https://github-readme-stats.vercel.app/api?username=ojrocket&theme=dark&hide_border=true&include_all_commits=true&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=ojrocket&theme=dark&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=ojrocket&theme=dark&hide_border=true&include_all_commits=true&count_private=false&layout=compact)
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ojrocket&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" width="48%" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ojrocket&layout=compact&theme=radical&hide_border=true&include_all_commits=true&count_private=true" width="43%" />
+</p>
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=ojrocket&theme=radical&no-frame=false&no-bg=true&margin-w=4)
-
-
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=ojrocket&theme=radical&hide_border=true" width="92%" />
+</p>
 
 ---
 ### 🌐 Connect with Me
