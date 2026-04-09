@@ -42,11 +42,6 @@ Intel: Known to be "clumsy" while coding, but the output is always mission-succe
 
 ### 📊 GitHub Stats
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=ojrocket&show_icons=true&theme=radical&hide_border=true&include_all_commits=true&count_private=true" width="48%" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ojrocket&layout=compact&theme=radical&hide_border=true&include_all_commits=true&count_private=true" width="43%" />
-</p>
-
-<p align="center">
   <img src="https://github-readme-streak-stats.herokuapp.com/?user=ojrocket&theme=radical&hide_border=true" width="92%" />
 </p>
 
