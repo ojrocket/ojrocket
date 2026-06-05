@@ -36,7 +36,7 @@ Intel: Known to be "clumsy" while coding, but the output is always mission-succe
 
 ### 📡 STEALTH_RADAR (B-2_SPIRIT_UPLINK)
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Courier+New&weight=900&size=22&pause=100&color=FF3131&center=true&vCenter=true&width=750&height=350&lines=%3E%3E+INITIATING+GHOST_PROTOCOL...;%5B+%E2%97%89+%5D+SCANNING+SRM-AP+COORDINATES...;%3E%3E+B-2+SPIRIT+STEALTH+WING+SYNCED;%3E%3E+RADAR+SIGNATURE:+INVISIBLE;++++++++++++++.______.++++++++;+++++++++++++_/++\__/++\_+++++++;+++++++++++_/++++++++++++\_+++++;++++++++++/________________\++++;%3E%3E+AVIONICS_STATUS:+STABLE;%3E%3E+OPERATION:+GHOST_CODE_X" />
+  <img src="./radar.svg" width="100%" alt="B-2 Spirit Stealth Radar" />
 </p>
 
 ---
