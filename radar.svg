@@ -1,0 +1,101 @@
+<svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <style>
+    @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+    @keyframes blink-slow { 0%,79%{opacity:1} 80%,100%{opacity:0.2} }
+    @keyframes data-scroll { 0%{opacity:0;transform:translateY(4px)} 15%{opacity:1;transform:translateY(0)} 85%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-4px)} }
+    .sweep-arm { transform-origin: 210px 210px; animation: sweep 4s linear infinite; }
+    .trail-1 { transform-origin: 210px 210px; animation: sweep 4s linear infinite; }
+    .trail-2 { transform-origin: 210px 210px; animation: sweep 4s linear -0.15s infinite; }
+    .trail-3 { transform-origin: 210px 210px; animation: sweep 4s linear -0.3s infinite; }
+    .trail-4 { transform-origin: 210px 210px; animation: sweep 4s linear -0.45s infinite; }
+    .blink-fast { animation: blink 1.1s step-end infinite; }
+    .blink-med  { animation: blink-slow 2.4s ease-in-out infinite; }
+    .cursor     { animation: blink 0.9s step-end infinite; }
+    .data-line  { animation: data-scroll 5s ease-in-out infinite; }
+    .data-line-2{ animation: data-scroll 5s ease-in-out -2.5s infinite; }
+  </style>
+  <clipPath id="radar-clip"><circle cx="210" cy="210" r="178"/></clipPath>
+  <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+    <stop offset="0%"   stop-color="#0a1a0a"/>
+    <stop offset="100%" stop-color="#020a02"/>
+  </radialGradient>
+</defs>
+<rect width="680" height="420" fill="#020804"/>
+<rect x="10" y="10" width="660" height="400" rx="4" fill="none" stroke="#1a2a1a" stroke-width="0.5"/>
+<circle cx="210" cy="210" r="178" fill="url(#rg)"/>
+<g clip-path="url(#radar-clip)">
+  <circle cx="210" cy="210" r="178" fill="none" stroke="#00FF41" stroke-width="0.4" opacity="0.35"/>
+  <circle cx="210" cy="210" r="134" fill="none" stroke="#00FF41" stroke-width="0.3" opacity="0.25"/>
+  <circle cx="210" cy="210" r="89"  fill="none" stroke="#00FF41" stroke-width="0.3" opacity="0.25"/>
+  <circle cx="210" cy="210" r="45"  fill="none" stroke="#00FF41" stroke-width="0.3" opacity="0.2"/>
+  <line x1="210" y1="32"  x2="210" y2="388" stroke="#00FF41" stroke-width="0.3" opacity="0.2"/>
+  <line x1="32"  y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="0.3" opacity="0.2"/>
+  <line x1="84"  y1="84"  x2="336" y2="336" stroke="#00FF41" stroke-width="0.2" opacity="0.15"/>
+  <line x1="336" y1="84"  x2="84"  y2="336" stroke="#00FF41" stroke-width="0.2" opacity="0.15"/>
+  <g class="trail-4" opacity="0.07"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
+  <g class="trail-3" opacity="0.12"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
+  <g class="trail-2" opacity="0.18"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
+  <g class="trail-1" opacity="0.08"><path d="M210 210 L210 32 A178 178 0 0 1 388 210 Z" fill="#00FF41"/></g>
+  <g class="sweep-arm">
+    <line x1="210" y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="1.2" opacity="0.9"/>
+    <line x1="210" y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="3" opacity="0.3"/>
+  </g>
+  <circle cx="210" cy="210" r="3" fill="#00FF41" opacity="0.9"/>
+</g>
+<circle cx="210" cy="210" r="178" fill="none" stroke="#00FF41" stroke-width="1" opacity="0.5"/>
+<g transform="translate(148, 175)">
+  <polygon points="62,4 52,2 42,0 28,-4 12,-10 0,-14 4,-8 10,-5 16,-4 8,-2 2,2 10,2 18,0 24,0 26,6 26,12 28,14 30,12 30,6 38,4 52,2 58,0 62,4 66,0 72,2 86,4 94,6 94,12 96,14 98,12 98,6 100,0 106,0 114,2 116,-2 122,-4 126,-8 130,-14 118,-10 102,-4 88,0 78,2 72,2"
+    fill="#00CC33" stroke="#00FF41" stroke-width="0.6" opacity="0.92" transform="translate(0,10) scale(1,0.85)"/>
+</g>
+<circle class="blink-med" cx="164" cy="186" r="3" fill="#FF3131"/>
+<circle class="blink-med" cx="256" cy="186" r="3" fill="#FF3131"/>
+<rect x="420" y="22" width="240" height="376" rx="2" fill="#020a02" stroke="#0d1a0d" stroke-width="0.5"/>
+<rect x="424" y="26" width="232" height="18" rx="1" fill="#001500"/>
+<text font-family="Courier New, monospace" font-size="10" fill="#00FF41" x="428" y="39" opacity="0.9">IMF_NEURAL_OPS // SRM-AP CELL</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="62" opacity="0.7">AGENT_ID........: OJ_ROCKET</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="75" opacity="0.7">CLEARANCE.......: ALPHA-7</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="88" opacity="0.7">DIVISION........: IMF NEURAL OPS</text>
+<line x1="424" y1="97" x2="656" y2="97" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="112" opacity="0.9">[ AVIONICS TELEMETRY ]</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="126" opacity="0.8">RADAR_SIG.......: INVISIBLE</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="139">STEALTH_MODE....: <tspan fill="#00FF41">ENGAGED</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="152">AVIONICS........: <tspan fill="#00FF41">STABLE</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="165">ALT_CRUISE......: <tspan fill="#00FF41">FL500</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="178">PAYLOAD_BAY.....: <tspan fill="#00FF41">ARMED</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="191">SIGNATURE_RCS...: <tspan fill="#00FF41">0.1 m²</tspan></text>
+<line x1="424" y1="200" x2="656" y2="200" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="215" opacity="0.9">[ MISSION UPLINK ]</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="229">OP_CODE.........: GHOST_CODE_X</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="242">PHASE...........: <tspan fill="#00FF41">ACTIVE</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="255">TARGET..........: <tspan fill="#FF3131" class="blink-med">ACQUIRING</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="268">COMMS_CHANNEL...: <tspan fill="#00FF41">ENCRYPTED</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="281">UPLINK_STATUS...: <tspan fill="#00FF41">LOCKED</tspan></text>
+<line x1="424" y1="290" x2="656" y2="290" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="305" opacity="0.9">[ LIVE FEED ]</text>
+<g class="data-line">
+  <text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="320">&gt;&gt; B-2 SPIRIT SYNCED</text>
+</g>
+<g class="data-line-2">
+  <text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="334">&gt;&gt; GHOST PROTOCOL INITIATED</text>
+</g>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="348">&gt;&gt; SCANNING COORDINATES...</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="362">&gt;&gt; NEXT TARGET: ADAPTING</text>
+<line x1="424" y1="372" x2="656" y2="372" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="386">CMD&gt; <tspan class="cursor">_</tspan></text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="32"  y="48"  opacity="0.5">N</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="32"  y="378" opacity="0.5">S</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="368" y="215" opacity="0.5">E</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="40"  y="215" opacity="0.5">W</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="68"  y="68"  opacity="0.3">315°</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="316" y="68"  opacity="0.3">045°</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="316" y="362" opacity="0.3">135°</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="68"  y="362" opacity="0.3">225°</text>
+<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="156" y="395" opacity="0.5">45km</text>
+<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="191" y="395" opacity="0.5">90km</text>
+<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="227" y="395" opacity="0.5">134km</text>
+<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="264" y="395" opacity="0.5">178km</text>
+<rect x="22" y="393" width="390" height="14" rx="1" fill="#010801"/>
+<text font-family="Courier New, monospace" font-size="7" fill="#00AA22" x="26" y="403" opacity="0.6">GHOST_PROTOCOL v4.2 // B-2_SPIRIT_UPLINK // SRM-AP NEURAL LABS</text>
+</svg>
