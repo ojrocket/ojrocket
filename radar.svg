@@ -1,31 +1,56 @@
 <svg width="100%" viewBox="0 0 680 420" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>B-2 Spirit Stealth Radar — Target Acquisition</title>
+<desc>Animated radar with rotating sweep, inbound aircraft targets, and lock-on sequence</desc>
 <defs>
   <style>
-    @keyframes sweep { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-    @keyframes blink { 0%,49%{opacity:1} 50%,100%{opacity:0} }
+    @keyframes sweep { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
     @keyframes blink-slow { 0%,79%{opacity:1} 80%,100%{opacity:0.2} }
+    @keyframes cursor { 0%,49%{opacity:1} 50%,100%{opacity:0} }
     @keyframes data-scroll { 0%{opacity:0;transform:translateY(4px)} 15%{opacity:1;transform:translateY(0)} 85%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(-4px)} }
-    .sweep-arm { transform-origin: 210px 210px; animation: sweep 4s linear infinite; }
-    .trail-1 { transform-origin: 210px 210px; animation: sweep 4s linear infinite; }
-    .trail-2 { transform-origin: 210px 210px; animation: sweep 4s linear -0.15s infinite; }
-    .trail-3 { transform-origin: 210px 210px; animation: sweep 4s linear -0.3s infinite; }
-    .trail-4 { transform-origin: 210px 210px; animation: sweep 4s linear -0.45s infinite; }
-    .blink-fast { animation: blink 1.1s step-end infinite; }
-    .blink-med  { animation: blink-slow 2.4s ease-in-out infinite; }
-    .cursor     { animation: blink 0.9s step-end infinite; }
-    .data-line  { animation: data-scroll 5s ease-in-out infinite; }
-    .data-line-2{ animation: data-scroll 5s ease-in-out -2.5s infinite; }
+    @keyframes bogey1-move { 0%{transform:translate(0px,0px)} 100%{transform:translate(-62px,48px)} }
+    @keyframes bogey2-move { 0%{transform:translate(0px,0px)} 100%{transform:translate(-38px,72px)} }
+    @keyframes bogey3-move { 0%{transform:translate(0px,0px)} 100%{transform:translate(20px,80px)} }
+    @keyframes bogey4-move { 0%{transform:translate(0px,0px)} 100%{transform:translate(55px,65px)} }
+    @keyframes blip-pulse { 0%,100%{opacity:1;r:3} 50%{opacity:0.5;r:5} }
+    @keyframes lock-ring { 0%{r:18;opacity:0.9;stroke-width:1.5} 50%{r:12;opacity:1;stroke-width:2} 100%{r:18;opacity:0.9;stroke-width:1.5} }
+    @keyframes lock-ring-outer { 0%,100%{r:26;opacity:0.4} 50%{r:22;opacity:0.7} }
+    @keyframes lock-crosshair { 0%,100%{opacity:0.7} 50%{opacity:1} }
+    @keyframes target-label-blink { 0%,59%{opacity:1} 60%,79%{opacity:0} 80%,100%{opacity:1} }
+    @keyframes warning-flash { 0%,49%{opacity:1} 50%,100%{opacity:0.1} }
+    .sweep-arm { transform-origin:210px 210px; animation:sweep 4s linear infinite; }
+    .trail-1 { transform-origin:210px 210px; animation:sweep 4s linear infinite; }
+    .trail-2 { transform-origin:210px 210px; animation:sweep 4s linear -0.15s infinite; }
+    .trail-3 { transform-origin:210px 210px; animation:sweep 4s linear -0.3s infinite; }
+    .trail-4 { transform-origin:210px 210px; animation:sweep 4s linear -0.45s infinite; }
+    .blink-med { animation:blink-slow 2.4s ease-in-out infinite; }
+    .cur { animation:cursor 0.9s step-end infinite; }
+    .data-line { animation:data-scroll 6s ease-in-out infinite; }
+    .data-line-2 { animation:data-scroll 6s ease-in-out -3s infinite; }
+    .warn { animation:warning-flash 0.6s step-end infinite; }
+    .bogey1 { animation:bogey1-move 18s linear infinite alternate; }
+    .bogey2 { animation:bogey2-move 22s linear infinite alternate; }
+    .bogey3 { animation:bogey3-move 26s linear 3s infinite alternate; }
+    .bogey4 { animation:bogey4-move 15s linear 6s infinite alternate; }
+    .blip { animation:blip-pulse 1.2s ease-in-out infinite; }
+    .blip-r { animation:blip-pulse 0.9s ease-in-out infinite 0.3s; }
+    .lock-ring { animation:lock-ring 1.4s ease-in-out infinite; }
+    .lock-ring-outer { animation:lock-ring-outer 1.4s ease-in-out infinite; }
+    .lock-ch { animation:lock-crosshair 1.4s ease-in-out infinite; }
+    .tgt-label { animation:target-label-blink 1.8s step-end infinite; }
   </style>
-  <clipPath id="radar-clip"><circle cx="210" cy="210" r="178"/></clipPath>
+  <clipPath id="rc"><circle cx="210" cy="210" r="178"/></clipPath>
   <radialGradient id="rg" cx="50%" cy="50%" r="50%">
-    <stop offset="0%"   stop-color="#0a1a0a"/>
+    <stop offset="0%"  stop-color="#0a1a0a"/>
     <stop offset="100%" stop-color="#020a02"/>
   </radialGradient>
 </defs>
+
 <rect width="680" height="420" fill="#020804"/>
 <rect x="10" y="10" width="660" height="400" rx="4" fill="none" stroke="#1a2a1a" stroke-width="0.5"/>
+
 <circle cx="210" cy="210" r="178" fill="url(#rg)"/>
-<g clip-path="url(#radar-clip)">
+
+<g clip-path="url(#rc)">
   <circle cx="210" cy="210" r="178" fill="none" stroke="#00FF41" stroke-width="0.4" opacity="0.35"/>
   <circle cx="210" cy="210" r="134" fill="none" stroke="#00FF41" stroke-width="0.3" opacity="0.25"/>
   <circle cx="210" cy="210" r="89"  fill="none" stroke="#00FF41" stroke-width="0.3" opacity="0.25"/>
@@ -34,68 +59,149 @@
   <line x1="32"  y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="0.3" opacity="0.2"/>
   <line x1="84"  y1="84"  x2="336" y2="336" stroke="#00FF41" stroke-width="0.2" opacity="0.15"/>
   <line x1="336" y1="84"  x2="84"  y2="336" stroke="#00FF41" stroke-width="0.2" opacity="0.15"/>
+
   <g class="trail-4" opacity="0.07"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
   <g class="trail-3" opacity="0.12"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
   <g class="trail-2" opacity="0.18"><path d="M210 210 L388 210 A178 178 0 0 0 210 32 Z" fill="#00FF41"/></g>
   <g class="trail-1" opacity="0.08"><path d="M210 210 L210 32 A178 178 0 0 1 388 210 Z" fill="#00FF41"/></g>
   <g class="sweep-arm">
     <line x1="210" y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="1.2" opacity="0.9"/>
-    <line x1="210" y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="3" opacity="0.3"/>
+    <line x1="210" y1="210" x2="388" y2="210" stroke="#00FF41" stroke-width="3"   opacity="0.3"/>
   </g>
   <circle cx="210" cy="210" r="3" fill="#00FF41" opacity="0.9"/>
+
+  <!-- BOGEY 1 — top-right, LOCKED ON -->
+  <g class="bogey1">
+    <circle cx="332" cy="98"  r="2" fill="#FF3131" opacity="0.15"/>
+    <circle cx="320" cy="108" r="2" fill="#FF3131" opacity="0.2"/>
+    <circle cx="308" cy="118" r="2" fill="#FF3131" opacity="0.3"/>
+    <circle class="lock-ring-outer" cx="296" cy="128" r="26" fill="none" stroke="#FF3131" stroke-width="1"/>
+    <circle class="lock-ring"       cx="296" cy="128" r="18" fill="none" stroke="#FF3131" stroke-width="1.5"/>
+    <line class="lock-ch" x1="276" y1="128" x2="286" y2="128" stroke="#FF3131" stroke-width="0.8"/>
+    <line class="lock-ch" x1="306" y1="128" x2="316" y2="128" stroke="#FF3131" stroke-width="0.8"/>
+    <line class="lock-ch" x1="296" y1="108" x2="296" y2="118" stroke="#FF3131" stroke-width="0.8"/>
+    <line class="lock-ch" x1="296" y1="138" x2="296" y2="148" stroke="#FF3131" stroke-width="0.8"/>
+    <circle class="blip-r" cx="296" cy="128" r="3" fill="#FF3131"/>
+    <text class="tgt-label" font-family="Courier New, monospace" font-size="7" fill="#FF3131" x="302" y="120">BOGEY-1</text>
+    <text class="tgt-label" font-family="Courier New, monospace" font-size="6" fill="#FF3131" x="302" y="110">LOCKED</text>
+  </g>
+
+  <!-- BOGEY 2 — top-left, inbound -->
+  <g class="bogey2">
+    <circle cx="132" cy="90"  r="2" fill="#FF8800" opacity="0.2"/>
+    <circle cx="122" cy="103" r="2" fill="#FF8800" opacity="0.3"/>
+    <circle cx="112" cy="116" r="2" fill="#FF8800" opacity="0.4"/>
+    <circle class="blip" cx="102" cy="130" r="3.5" fill="#FF8800"/>
+    <text font-family="Courier New, monospace" font-size="7" fill="#FF8800" x="108" y="126">B-2</text>
+    <text font-family="Courier New, monospace" font-size="6" fill="#FF8800" x="108" y="136" opacity="0.8">INBOUND</text>
+  </g>
+
+  <!-- BOGEY 3 — top-center, inbound -->
+  <g class="bogey3">
+    <circle cx="230" cy="72"  r="2" fill="#FF8800" opacity="0.2"/>
+    <circle cx="228" cy="86"  r="2" fill="#FF8800" opacity="0.3"/>
+    <circle cx="226" cy="100" r="2" fill="#FF8800" opacity="0.4"/>
+    <circle class="blip" cx="224" cy="114" r="3" fill="#FF8800"/>
+    <text font-family="Courier New, monospace" font-size="7" fill="#FF8800" x="230" y="111">BOGEY-3</text>
+  </g>
+
+  <!-- BOGEY 4 — right side, tracking -->
+  <g class="bogey4">
+    <circle cx="368" cy="170" r="2" fill="#FFCC00" opacity="0.2"/>
+    <circle cx="358" cy="176" r="2" fill="#FFCC00" opacity="0.3"/>
+    <circle cx="346" cy="184" r="2" fill="#FFCC00" opacity="0.4"/>
+    <circle class="blip" cx="334" cy="193" r="3" fill="#FFCC00"/>
+    <text font-family="Courier New, monospace" font-size="7" fill="#FFCC00" x="310" y="190">BOGEY-4</text>
+    <text font-family="Courier New, monospace" font-size="6" fill="#FFCC00" x="310" y="200" opacity="0.8">TRACKING</text>
+  </g>
+
+  <!-- Friendly B-2 at center -->
+  <g transform="translate(148,175)">
+    <polygon points="62,4 52,2 42,0 28,-4 12,-10 0,-14 4,-8 10,-5 16,-4 8,-2 2,2 10,2 18,0 24,0 26,6 26,12 28,14 30,12 30,6 38,4 52,2 58,0 62,4 66,0 72,2 86,4 94,6 94,12 96,14 98,12 98,6 100,0 106,0 114,2 116,-2 122,-4 126,-8 130,-14 118,-10 102,-4 88,0 78,2 72,2"
+      fill="#00CC33" stroke="#00FF41" stroke-width="0.6" opacity="0.92"
+      transform="translate(0,10) scale(1,0.85)"/>
+  </g>
+  <circle class="blink-med" cx="164" cy="186" r="3" fill="#FF3131"/>
+  <circle class="blink-med" cx="256" cy="186" r="3" fill="#FF3131"/>
+
+  <!-- Threat vector dashed lines -->
+  <line x1="296" y1="128" x2="218" y2="202" stroke="#FF3131" stroke-width="0.4" stroke-dasharray="4 3" opacity="0.25"/>
+  <line x1="102" y1="130" x2="200" y2="202" stroke="#FF8800" stroke-width="0.4" stroke-dasharray="4 3" opacity="0.2"/>
+  <line x1="224" y1="114" x2="212" y2="198" stroke="#FF8800" stroke-width="0.4" stroke-dasharray="4 3" opacity="0.2"/>
+  <line x1="334" y1="193" x2="222" y2="208" stroke="#FFCC00" stroke-width="0.4" stroke-dasharray="4 3" opacity="0.2"/>
 </g>
+
 <circle cx="210" cy="210" r="178" fill="none" stroke="#00FF41" stroke-width="1" opacity="0.5"/>
-<g transform="translate(148, 175)">
-  <polygon points="62,4 52,2 42,0 28,-4 12,-10 0,-14 4,-8 10,-5 16,-4 8,-2 2,2 10,2 18,0 24,0 26,6 26,12 28,14 30,12 30,6 38,4 52,2 58,0 62,4 66,0 72,2 86,4 94,6 94,12 96,14 98,12 98,6 100,0 106,0 114,2 116,-2 122,-4 126,-8 130,-14 118,-10 102,-4 88,0 78,2 72,2"
-    fill="#00CC33" stroke="#00FF41" stroke-width="0.6" opacity="0.92" transform="translate(0,10) scale(1,0.85)"/>
-</g>
-<circle class="blink-med" cx="164" cy="186" r="3" fill="#FF3131"/>
-<circle class="blink-med" cx="256" cy="186" r="3" fill="#FF3131"/>
-<rect x="420" y="22" width="240" height="376" rx="2" fill="#020a02" stroke="#0d1a0d" stroke-width="0.5"/>
-<rect x="424" y="26" width="232" height="18" rx="1" fill="#001500"/>
-<text font-family="Courier New, monospace" font-size="10" fill="#00FF41" x="428" y="39" opacity="0.9">IMF_NEURAL_OPS // SRM-AP CELL</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="62" opacity="0.7">AGENT_ID........: OJ_ROCKET</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="75" opacity="0.7">CLEARANCE.......: ALPHA-7</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="88" opacity="0.7">DIVISION........: IMF NEURAL OPS</text>
-<line x1="424" y1="97" x2="656" y2="97" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
-<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="112" opacity="0.9">[ AVIONICS TELEMETRY ]</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="126" opacity="0.8">RADAR_SIG.......: INVISIBLE</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="139">STEALTH_MODE....: <tspan fill="#00FF41">ENGAGED</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="152">AVIONICS........: <tspan fill="#00FF41">STABLE</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="165">ALT_CRUISE......: <tspan fill="#00FF41">FL500</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="178">PAYLOAD_BAY.....: <tspan fill="#00FF41">ARMED</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="191">SIGNATURE_RCS...: <tspan fill="#00FF41">0.1 m²</tspan></text>
-<line x1="424" y1="200" x2="656" y2="200" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
-<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="215" opacity="0.9">[ MISSION UPLINK ]</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="229">OP_CODE.........: GHOST_CODE_X</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="242">PHASE...........: <tspan fill="#00FF41">ACTIVE</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="255">TARGET..........: <tspan fill="#FF3131" class="blink-med">ACQUIRING</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="268">COMMS_CHANNEL...: <tspan fill="#00FF41">ENCRYPTED</tspan></text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="281">UPLINK_STATUS...: <tspan fill="#00FF41">LOCKED</tspan></text>
-<line x1="424" y1="290" x2="656" y2="290" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
-<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="305" opacity="0.9">[ LIVE FEED ]</text>
-<g class="data-line">
-  <text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="320">&gt;&gt; B-2 SPIRIT SYNCED</text>
-</g>
-<g class="data-line-2">
-  <text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="334">&gt;&gt; GHOST PROTOCOL INITIATED</text>
-</g>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="348">&gt;&gt; SCANNING COORDINATES...</text>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="362">&gt;&gt; NEXT TARGET: ADAPTING</text>
-<line x1="424" y1="372" x2="656" y2="372" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
-<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="386">CMD&gt; <tspan class="cursor">_</tspan></text>
-<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="32"  y="48"  opacity="0.5">N</text>
-<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="32"  y="378" opacity="0.5">S</text>
-<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="368" y="215" opacity="0.5">E</text>
+
+<!-- COMPASS -->
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="206" y="48"  opacity="0.5">N</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="206" y="385" opacity="0.5">S</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="373" y="215" opacity="0.5">E</text>
 <text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="40"  y="215" opacity="0.5">W</text>
 <text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="68"  y="68"  opacity="0.3">315°</text>
 <text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="316" y="68"  opacity="0.3">045°</text>
 <text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="316" y="362" opacity="0.3">135°</text>
 <text font-family="Courier New, monospace" font-size="8" fill="#00FF41" x="68"  y="362" opacity="0.3">225°</text>
-<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="156" y="395" opacity="0.5">45km</text>
-<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="191" y="395" opacity="0.5">90km</text>
-<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="227" y="395" opacity="0.5">134km</text>
-<text font-family="Courier New, monospace" font-size="7" fill="#00FF41" x="264" y="395" opacity="0.5">178km</text>
+
+<!-- RIGHT PANEL -->
+<rect x="420" y="22" width="240" height="376" rx="2" fill="#020a02" stroke="#0d1a0d" stroke-width="0.5"/>
+<rect x="424" y="26" width="232" height="18" rx="1" fill="#001500"/>
+<text font-family="Courier New, monospace" font-size="10" fill="#00FF41" x="428" y="39" opacity="0.9">Special Agent // SRM-AP CELL</text>
+
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="60">AGENT_ID......: OJ_ROCKET</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="73">CLEARANCE.....: TOP SECRET</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="86">OP_CODE.......: CLASSIFIED</text>
+
+<line x1="424" y1="95" x2="656" y2="95" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+
+<text font-family="Courier New, monospace" font-size="9" fill="#FF3131" x="428" y="110" class="warn">[ !! THREAT BOARD !! ]</text>
+
+<rect x="428" y="116" width="228" height="13" rx="1" fill="#1a0000" opacity="0.6"/>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF3131" x="432" y="126">BOGEY-1</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF3131" x="510" y="126">BRG:042</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF3131" x="574" y="126" class="blink-med">LOCKED</text>
+
+<rect x="428" y="132" width="228" height="13" rx="1" fill="#120800" opacity="0.6"/>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="432" y="142">BOGEY-2</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="510" y="142">BRG:318</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="568" y="142">INBOUND</text>
+
+<rect x="428" y="148" width="228" height="13" rx="1" fill="#120800" opacity="0.6"/>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="432" y="158">BOGEY-3</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="510" y="158">BRG:355</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FF8800" x="568" y="158">INBOUND</text>
+
+<rect x="428" y="164" width="228" height="13" rx="1" fill="#141000" opacity="0.6"/>
+<text font-family="Courier New, monospace" font-size="8" fill="#FFCC00" x="432" y="174">BOGEY-4</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FFCC00" x="510" y="174">BRG:078</text>
+<text font-family="Courier New, monospace" font-size="8" fill="#FFCC00" x="561" y="174">TRACKING</text>
+
+<line x1="424" y1="182" x2="656" y2="182" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="197">[ LOCK STATUS ]</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="211">PRIMARY_TGT...: <tspan fill="#FF3131" class="blink-med">BOGEY-1</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="224">LOCK_TYPE.....: <tspan fill="#FF3131">RADAR_LOCK</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="237">MISSILE_RDY...: <tspan fill="#00FF41">ARMED</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="250">TIME_TO_INT...: <tspan fill="#FF3131" class="blink-med">00:48</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="263">COUNTERMEAS...: <tspan fill="#00FF41">STANDBY</tspan></text>
+
+<line x1="424" y1="272" x2="656" y2="272" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="287">[ AVIONICS ]</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="301">RADAR_SIG.....: INVISIBLE</text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="314">STEALTH.......: <tspan fill="#00FF41">ENGAGED</tspan></text>
+<text font-family="Courier New, monospace" font-size="9" fill="#00AA22" x="428" y="327">ALT_CRUISE....: <tspan fill="#00FF41">FL500</tspan></text>
+
+<line x1="424" y1="336" x2="656" y2="336" stroke="#00FF41" stroke-width="0.3" opacity="0.3"/>
+
+<text font-family="Courier New, monospace" font-size="9" fill="#00FF41" x="428" y="351">[ LIVE FEED ]</text>
+<g class="data-line">
+  <text font-family="Courier New, monospace" font-size="9" fill="#FF3131" x="428" y="366">&gt;&gt; BOGEY-1 LOCKED — WEAPONS FREE</text>
+</g>
+<g class="data-line-2">
+  <text font-family="Courier New, monospace" font-size="9" fill="#FF8800" x="428" y="366">&gt;&gt; 3 HOSTILES CLOSING FAST</text>
+</g>
+
 <rect x="22" y="393" width="390" height="14" rx="1" fill="#010801"/>
-<text font-family="Courier New, monospace" font-size="7" fill="#00AA22" x="26" y="403" opacity="0.6">GHOST_PROTOCOL v4.2 // B-2_SPIRIT_UPLINK // SRM-AP NEURAL LABS</text>
+<text font-family="Courier New, monospace" font-size="7" fill="#00AA22" x="26" y="403" opacity="0.6">GHOST_PROTOCOL v4.2 // B-2_SPIRIT_UPLINK // THREATS: 4</text>
 </svg>
